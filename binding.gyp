@@ -24,7 +24,7 @@
             'MACOSX_DEPLOYMENT_TARGET': '10.7'
           }
          }],
-        ['OS=="linux"', {
+        ['OS=="linux" or OS=="solaris"', {
           'cflags_cc': [
             '-fexceptions'
           ]
