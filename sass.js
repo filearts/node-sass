@@ -7,7 +7,7 @@ try {
     binding = require(__dirname + '/build/Release/binding');
   }
 } catch (e) {
-  console.log("Exception caught:"", e");
+  console.log("Exception caught:");
   console.dir(e);
   
   // default to a precompiled binary if no build exists
