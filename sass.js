@@ -2,10 +2,14 @@ var binding;
 var fs = require('fs');
 try {
   if (fs.realpathSync(__dirname + '/build')) {
+    console.log("Attempting to require", __dirname + '/build/Release/binding');
     // use the build version if it exists
     binding = require(__dirname + '/build/Release/binding');
   }
 } catch (e) {
+  console.log("Exception caught:"", e");
+  console.dir(e);
+  
   // default to a precompiled binary if no build exists
   var platform_full = process.platform+'-'+process.arch;
   binding = require(__dirname + '/precompiled/'+platform_full+'/binding');
